@@ -1,0 +1,47 @@
+<h4>Clientes</h4>
+<br>
+
+<button class="btn btn-success" routerLink="/cadastro">Novo Cliente</button>
+
+<br>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Documento</th>
+      <th scope="col">Nascimento</th>
+      <th scope="col">Lougradouro</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">CEP</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Complemento</th>
+      <th scope="col">Uf</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Aluno of alunos">
+
+      <td scope="row">{{Aluno.id}}</td>
+      <td scope="row">{{Aluno.nome}}</td>
+      <td scope="row">{{Aluno.telefone}}</td>
+      <td scope="row">{{Aluno.email}}</td>
+      <td scope="row">{{Aluno.documento}}</td>
+      <td scope="row">{{Aluno.dataNascimento | date: 'dd/MM/yyyy'}}</td>
+      <td scope="row">{{Aluno.endereco.rua}}</td>
+      <td scope="row">{{Aluno.endereco.numero}}</td>
+      <td scope="row">{{Aluno.endereco.bairro}}</td>
+      <td scope="row">{{Aluno.endereco.cep}}</td>
+      <td scope="row">{{Aluno.endereco.cidade}}</td>
+      <td scope="row">{{Aluno.endereco.rua}}</td>
+      <td scope="row">{{Aluno.endereco.uf}}</td>
+    </tr>
+
+  </tbody>
+</table>

@@ -1,2 +1,42 @@
 <app-nav-bar-component></app-nav-bar-component>
 <router-outlet></router-outlet>
+<header>
+
+    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+    <div class="overlay"></div>
+  
+    <!-- The HTML5 video element that will create the background video on the header -->
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://stream.mux.com/wlH2cg8ev013EU00HYPvQTVcXCPUzul4Rw/high.mp4?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InQ5UHZucm9ZY0hQNjhYSmlRQnRHTEVVSkVSSXJ0UXhKIn0.eyJleHAiOjE2NTQ2NTE2MTMsImF1ZCI6InYiLCJzdWIiOiJ3bEgyY2c4ZXYwMTNFVTAwSFlQdlFUVmNYQ1BVenVsNFJ3In0.VqfH_0V-GFj9ixkbZ_DvVHH7rGHMPWzY19xYriagXntXCqlDv9DRu1GdH_1cUp0z4Xgs3H8iK7RWtg8tVld4fA87TihHpcx1OhSoPXTgBzH3SDXlT--6EhH0B3p6OxcEPw1tNBgpztopiI54wc0GVfAu9ma5vcnjoeqVqR-qd4YYA-902NAwuva-mmOPOhT47MxC-zMl7uoMlcO2km7G1xR5Cq2Y5PRC1CCt_0R2o0nYmd_KJJeNzHeQJ09uuiyLySnLL3Sl9lWkTuHy8F5g0DW0hgSpWfFLb8DISRnHh4pFDavQP-8EtwF2KmJlEgx__WYqbnRQ0PhaX875glVSdA" type="video/mp4">
+    </video>
+  
+    <!-- The header content -->
+    <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+        <div class="w-100 text-white">
+          <h1 class="display-3">ACADEMIA CML</h1>
+          <p class="lead mb-0">Software de academia mais avançado do BRASIL</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Page section example for content below the video header -->
+  <section class="my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <p>Software realizado para trabalho da faculdade Reges cujo sua materia é Topicos Avansados em Programação.</p>
+          <p>Foi realizado criação de uma API onde o FrontEnd se baseia em Angular TypeScript e o Back-End Java puro, o programa foi também concebido utilizando banco de dados MYSQL.</p>
+          <p>Durante o processo de criação tivemos diversas divergências, como, a exclusão indevida de TODO o projeto utilizando apenas um comando cujo o mesmo seria: "rd .git /S/Q". no Prompt de Comando. Não foi apenas uma vez! Christian, não satisfeito em ter quebrado todo o FrontEnd, após alguns dias Christian quebrou todo o BackEnd também! (Sem o Matheus ter saber) </p>
+          <p class="mb-0">
+            Instagram dos criadores:
+            <br/> 
+            <a href="https://www.instagram.com/maatheusbalduino/">Matheus Baldoino</a>
+            <br/>
+            <a href="https://www.instagram.com/chris.zafa/">Christian Zafalon</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>

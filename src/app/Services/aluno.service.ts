@@ -14,6 +14,24 @@ export class AlunoService {
   constructor( private http: HttpClient) { }
 
   obterAluno(): Observable<any>{
-    return this.http.get<any>(`${this.url}/clientes`);
+   // return this.http.get<any>(`${this.url}/alunos`);
+    return this.http.get<any>(this.url + 'alunos');
+  }
+
+    obterAlunoId(id: number): Observable<number>{
+      return this.http.get<any>(this.url + 'alunos/' + id);
+    }
+
+    public Adicionar(aluno: Aluno): Observable<number> {
+      return this.http.post<number>(this.url + 'alunos', aluno);
+    }
+  
+    public Editar(id:number, aluno:Aluno):Observable<number>{
+      return this.http.put<number>(this.url + 'alunos/' + id, aluno);
+  }
+
+  public Deletar(id:number):Observable<number>{
+    return this.http.delete<number>(this.url + 'alunos/' + id);
+
   }
 }

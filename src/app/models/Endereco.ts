@@ -5,6 +5,7 @@ export class Endereco {
     cidade!:string;
     numero!:string;
     uf!:string;
-    rua!:string;
+    logradouro!:string;
+    complemento!:string;
     }
     

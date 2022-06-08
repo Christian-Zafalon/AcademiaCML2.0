@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Aluno } from '../models/Aluno';
 import { AlunoService } from '../Services/aluno.service';
 
@@ -8,20 +9,26 @@ import { AlunoService } from '../Services/aluno.service';
   styleUrls: ['./meu-component.component.css']
 })
 export class MeuComponentComponent implements OnInit {
-
-  Alunos!: any;
-
-  constructor(private api: AlunoService) { }
+  constructor(private api: AlunoService,
+  private router: Router,
+  private route: ActivatedRoute ) {}
 // CRIAÇÃO DOS ALUNOS
 
   model: Aluno = new Aluno;
-  ngOnInit(): void {
-   
+  Alunos!: any;
+  id!: number;
+
+
+  voltarParaLista() {
+    this.router.navigate(['/tabela']);
   }
 
-  //Função Submit, aonde tudo que estiver no forms irá printar no console
-  onSubmit(){
-    console.log(this.model);
+  obterAlunoId(id:number){
+
+    this.api.obterAlunoId(id).subscribe({
+      error: (e) => { console.log(e) },
+      next: (dados) => { this.Alunos = dados },
+      });
   }
 
   obterAluno(){
@@ -33,5 +40,43 @@ export class MeuComponentComponent implements OnInit {
     })
   }
 
-  UsarCor=true;
+  submit(): void {
+
+    const { id } = this.route.snapshot.params;
+    this.id = id;
+    this.model.id = this.id;
+    
+    console.log(id);
+
+    if (this.id > 0) {
+
+      this.api.Editar(this.id,this.model).subscribe({
+        error: (e) => { console.log(e) },
+        next: (dados) => {
+          console.log(dados)
+          alert('Aluno alterado com sucesso!!!!!');
+          this.voltarParaLista();
+         },
+        });
+
+    } else {
+      this.api.Adicionar(this.model).subscribe({
+        error: (e) => { console.log(e) },
+        next: (dados) => {
+          alert('Aluno cadastrado com sucesso!!!!!');
+          this.voltarParaLista();
+         },
+        });
+    }
+  }
+
+  ngOnInit(): void {
+   
+  }
+
+
+  onSubmit(){
+    
+  }
+
 }
